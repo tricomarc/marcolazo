@@ -8,6 +8,7 @@
     <style>
         :root { --bg-color: #0f172a; --text-color: #cbd5e1; --primary-color: #38bdf8; --secondary-bg: #1e293b; --accent-color: #0ea5e9; --nav-bg: rgba(15, 23, 42, 0.9); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; padding-top: 80px; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
         nav { position: fixed; top: 0; width: 100%; background-color: var(--nav-bg); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--secondary-bg); }
@@ -15,15 +16,17 @@
         .logo { color: #f8fafc; font-weight: 800; text-decoration: none; }
         .logo span { color: var(--primary-color); }
         .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+        section { padding: 5rem 0; border-bottom: 1px solid var(--secondary-bg); }
+        h3.section-title { color: #f8fafc; font-size: 2rem; margin-bottom: 3rem; }
         .job-card { background: var(--secondary-bg); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color); margin-bottom: 2rem; }
         .job-header { display: flex; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .job-title { color: #f8fafc; font-size: 1.3rem; font-weight: 600; }
-        .job-company { color: var(--primary-color); font-weight: bold; }
+        .job-company { color: var(--primary-color); font-weight: bold; margin-bottom: 0.5rem; }
         .job-card ul { list-style: none; margin-left: 0; }
         .job-card ul li { margin-bottom: 0.8rem; padding-left: 1.8rem; position: relative; }
         .job-card ul li::before { content: "▹"; position: absolute; left: 0; color: var(--primary-color); }
-        h3.section-title { color: #f8fafc; font-size: 2rem; margin-bottom: 3rem; }
     </style>
 </head>
 <body>
@@ -41,15 +44,15 @@
         <section id="experience">
             <h3 class="section-title">Trayectoria Profesional</h3>
             
-            <!-- ZENTA GROUP -->
             <div class="job-card">
                 <div class="job-header">
                     <div>
                         <div class="job-title">QA Automatizador Experto</div>
-                        <div class="job-company">@ Zenta Group</div>
+                        <div class="job-company">Zenta Group · Jornada completa</div>
                     </div>
-                    <div class="job-date">Jul 2025 - Presente</div>
                 </div>
+                <p style="margin-bottom: 1rem;">Lidero estrategias de ingeniería de calidad robustas y la promoción de mejores prácticas en sectores críticos (Previsional/AFP). Mi enfoque combina el liderazgo técnico con la implementación de arquitecturas escalables y cultura DevOps.</p>
+                <p><strong>Experiencia y Responsabilidades Clave:</strong></p>
                 <ul>
                     <li><strong>Liderazgo y Estrategia:</strong> Dirección del equipo de QA en clientes AFP. Implementé flujos de trabajo Agile Testing (Shift-Left), colaborando con POs, UX y Devs para asegurar la calidad desde el diseño.</li>
                     <li><strong>Arquitectura de Automatización:</strong> Diseño y mantenimiento de frameworks desacoplados bajo el patrón Page Object Model (POM). Esta arquitectura separa la lógica del framework en proyectos base independientes, permitiendo alta reutilización y escalabilidad.</li>
@@ -57,59 +60,49 @@
                     <li><strong>Ciclo de Vida y Despliegues:</strong> Responsable del despliegue en ambientes de QA y STG. Gestiono el proceso de PR y Merge a STG tras la certificación en QA, asegurando pasos a producción estables.</li>
                     <li><strong>ChatOps y Comunicación:</strong> Automatización de flujos de comunicación entre QA y Desarrollo, generando notificaciones y registros automáticos de despliegues para optimizar la visibilidad del equipo.</li>
                     <li><strong>CI/CD & Calidad de Código:</strong> Integración de pruebas en pipelines de Jenkins. Uso de SonarQube para análisis estático, garantizando scripts seguros y mantenibles.</li>
-                    <li><strong>Stack:</strong> Selenium, Appium, Pytest, Postman, JMeter, K6, BrowserStack, Java, Python, TypeScript, JavaScript, Jenkins, Git, Bitbucket, GCP, X-ray, Jira.</li>
                 </ul>
+                <p><strong>Stack Tecnológico:</strong> Herramientas: Selenium, Appium, Pytest, Postman, JMeter, K6, BrowserStack. Lenguajes: Java, Python, TypeScript, JavaScript. DevOps/Cloud: Jenkins, Git (GitFlow), Bitbucket, Google Cloud Platform (GCP). Gestión: X-ray, Jira, SonarQube, Oracle, PostgreSQL.</p>
             </div>
 
-            <!-- FEMSA SALUD -->
             <div class="job-card">
                 <div class="job-header">
                     <div>
                         <div class="job-title">Automatizador Senior</div>
-                        <div class="job-company">@ FEMSA Salud SpA</div>
+                        <div class="job-company">FEMSA Salud · Jornada completa</div>
                     </div>
-                    <div class="job-date">Mar 2023 - May 2025</div>
                 </div>
+                <p><strong>Estrategia y Liderazgo Técnico:</strong> Definición e implementación del plan regional de automatización, estableciendo un framework base de pruebas para web, mobile y servicios. Promoción e implementación de buenas prácticas que mejoraron la consistencia y mantenibilidad del código.</p>
+                <p><strong>Desarrollo Avanzado de Automatización de Pruebas:</strong></p>
                 <ul>
-                    <li><strong>Estrategia y Liderazgo Técnico:</strong> Definición e implementación del plan regional de automatización, estableciendo un framework base para web, mobile y servicios. Promoción de buenas prácticas que mejoraron la consistencia y mantenibilidad del código.</li>
-                    <li><strong>Desarrollo Avanzado:</strong> Diseño de pruebas E2E con Cypress (TDD/BDD, Cucumber, Gherkin). Automatización mobile con Appium, WebdriverIO y NodeJS. Pruebas de integración/servicios con Postman, K6, TypeScript y JS.</li>
-                    <li><strong>Gestión:</strong> Ciclo de vida completo con metodología Agile (Jira, Confluence), administración con QMetry y control de versiones con Bitbucket (GitFlow).</li>
+                    <li>Diseño y desarrollo de pruebas end-to-end (UI) robustas utilizando Cypress (TDD/BDD, Cucumber, Gherkin, NodeJS, Chai, Chai-jQuery).</li>
+                    <li>Implementación de la automatización de pruebas para aplicaciones nativas (iOS/Android) con Appium, WebdriverIO y NodeJS.</li>
+                    <li>Desarrollo y automatización de pruebas de integración y servicios (API) empleando herramientas como Postman, Grafana-K6, TypeScript, NodeJS y JavaScript.</li>
                 </ul>
+                <p><strong>Gestión de Proyectos y Mejora Continua:</strong> Gestión del ciclo de vida completo con metodología Agile (Jira, Confluence), administración de casos de prueba con QMetry, control de versiones con Bitbucket (GitFlow) y construcción de scripts de pipeline en Jenkins.</p>
             </div>
 
-            <!-- ANDAIN -->
             <div class="job-card">
                 <div class="job-header">
                     <div>
                         <div class="job-title">Analista QA Automatizador</div>
-                        <div class="job-company">@ Andain S.A</div>
+                        <div class="job-company">Andain · Jornada completa</div>
                     </div>
-                    <div class="job-date">Nov 2020 - Feb 2023</div>
                 </div>
-                <ul>
-                    <li><strong>Liderazgo Técnico:</strong> Diseño e implementación de arquitectura de pruebas (Web/Mobile/API) y optimización de pipelines CI/CD.</li>
-                    <li>Automatización funcional web con Selenium y Java. Desarrollo de suites de automatización móvil y servicios API.</li>
-                    <li><strong>Infraestructura:</strong> Generación de entornos integrados con Jenkins, Docker y pruebas de performance mediante JMeter. Administración de bases de datos Oracle, MySQL y MongoDB.</li>
-                </ul>
+                <p><strong>Automatización de Pruebas:</strong> Desarrollo de pruebas funcionales web (Selenium, Java, Maven), automatización con Python/PyTest (POM), pruebas unitarias (JUnit, PHPUnit, Jasmine), pruebas de performance (JMeter) y pruebas de servicios API REST con Postman.</p>
+                <p><strong>CI/CD y DevOps:</strong> Generación de entornos de integración automatizados con Jenkins, Docker, Pytest, Selenium, GitHub. Administración de contenedores Docker (imágenes, Dockerfile, Docker-Compose).</p>
+                <p><strong>Gestión y Bases de Datos:</strong> Gestión operativa con Jira, metodología SCRUM, manejo de MySQL, MongoDB y Linux Bash.</p>
             </div>
 
-            <!-- IBM -->
             <div class="job-card">
                 <div class="job-header">
                     <div>
                         <div class="job-title">Practicum Student</div>
-                        <div class="job-company">@ IBM</div>
+                        <div class="job-company">IBM · Contrato de prácticas</div>
                     </div>
-                    <div class="job-date">Feb 2020 - Jun 2020</div>
                 </div>
-                <ul>
-                    <li>Colaboración en proyectos de transformación digital para el sector bancario.</li>
-                    <li>Implementación de pipelines de integración continua utilizando Jenkins.</li>
-                    <li>Gestión y despliegue de aplicaciones mediante contenedores Docker.</li>
-                </ul>
+                <p>Participación activa en la transformación digital de un cliente bancario. Integración de Delivery Pipelines con Jenkins para aplicaciones AngularJS y Java, ejecución de pruebas funcionales y configuración de contenedores Docker.</p>
             </div>
         </section>
     </div>
-
 </body>
 </html>
