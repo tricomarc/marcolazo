@@ -2,44 +2,49 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Marco Lazo | QA Expert</title>
+    <title>Marco Lazo | Portfolio Profesional</title>
+    <!-- Font Awesome para los iconos de herramientas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --primary-color: #2563eb;
-            --card-bg: #ffffff;
-        }
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 20px; line-height: 1.6; }
+        :root { --primary: #2563eb; --bg: #f8fafc; --text: #1e293b; --card-bg: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 40px; line-height: 1.6; }
         .container { max-width: 900px; margin: auto; }
-        .hero { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; }
-        .hero img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-color); }
-        .job-card { background: var(--card-bg); padding: 25px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .btn-primary { background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; border: none; font-weight: bold; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
-        .modal-content { background: white; margin: 10% auto; padding: 30px; width: 350px; border-radius: 10px; text-align: center; }
-        h3 { color: var(--primary-color); margin-bottom: 5px; }
-        pre { white-space: pre-wrap; font-family: inherit; }
+        .header { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; }
+        .header img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); }
+        .tab-buttons { display: flex; gap: 10px; margin-bottom: 20px; }
+        .tab-btn { padding: 12px 24px; cursor: pointer; border: none; background: #e2e8f0; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+        .tab-btn.active { background: var(--primary); color: white; }
+        .tab-content { display: none; background: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .tab-content.active { display: block; }
+        .job-card { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+        .skill-item { padding: 15px; background: #f1f5f9; border-radius: 8px; text-align: center; font-weight: 600; }
+        pre { white-space: pre-wrap; font-family: inherit; margin: 0; }
+        .btn-primary { background-color: var(--primary); color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; border: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header class="hero">
+    <header class="header">
         <img src="perfil.jpg" alt="Marco Lazo">
         <div>
             <h1>Marco Andrés Lazo Aravena</h1>
             <p>QA Automation Engineer | DevOps | SDET</p>
-            <button id="btnContacto" class="btn-primary">Contactar</button>
+            <button id="btnContacto" class="btn-primary">Contactar 📞</button>
         </div>
     </header>
 
-    <section id="experience">
-        <h2>Experiencia Profesional</h2>
+    <div class="tab-buttons">
+        <button class="tab-btn active" onclick="showTab('experiencia')">💼 Experiencia</button>
+        <button class="tab-btn" onclick="showTab('skills')">🛠️ Herramientas & Tech</button>
+    </div>
 
+    <!-- Pestaña Experiencia -->
+    <div id="experiencia" class="tab-content active">
         <div class="job-card">
             <h3>QA Automatizador Experto | Zenta Group</h3>
-            <pre>jul. 2025 - actualidad · 1 año | Gran Santiago, Chile · Híbrido
+            <pre>jul. 2025 - actualidad | Gran Santiago, Chile · Híbrido
 Lidero estrategias de ingeniería de calidad robustas y la promoción de mejores prácticas en sectores críticos (Previsional/AFP). Mi enfoque combina el liderazgo técnico con la implementación de arquitecturas escalables y cultura DevOps.
 
 Experiencia y Responsabilidades Clave:
@@ -64,72 +69,43 @@ Gestión: X-ray, Jira, SonarQube, Oracle, PostgreSQL.</pre>
 
         <div class="job-card">
             <h3>Automatizador Senior | FEMSA Salud</h3>
-            <pre>mar. 2023 - may. 2025 · 2 años 3 meses | Gran Santiago, Chile · En remoto
-Estrategia y Liderazgo Técnico:
-Definición e implementación del plan regional de automatización, estableciendo un framework base de pruebas para web, mobile y servicios. Este marco escalable permitió estandarizar metodologías y acelerar los ciclos de desarrollo en toda la región.
-Promoción e implementación de buenas prácticas de desarrollo de scripts automatizados, proporcionando lineamientos técnicos claros que mejoraron la consistencia y mantenibilidad del código del equipo.
-
-Desarrollo Avanzado de Automatización de Pruebas:
-Diseño y desarrollo de pruebas end-to-end (UI) robustas utilizando Cypress (TDD/BDD, Cucumber, Gherkin, NodeJS, Chai, Chai-jQuery), asegurando la fiabilidad y experiencia de usuario de las plataformas web.
-Implementación de la automatización de pruebas para aplicaciones nativas (iOS/Android) con Appium, WebdriverIO y NodeJS, garantizando la calidad y funcionalidad en entornos móviles críticos.
-Desarrollo y automatización de pruebas de integración y servicios (API), alineadas a la arquitectura de sistema, empleando herramientas como Postman, Grafana-K6, TypeScript, NodeJS y JavaScript para validar lógicas de negocio y rendimiento.
-
-Gestión de Proyectos y Mejora Continua:
-Gestión del ciclo de vida completo de proyectos de automatización aplicando metodología Agile y utilizando herramientas Atlassian (Jira, Confluence) para una planificación, seguimiento y comunicación eficientes.
-Administración de casos de prueba con QMetry y control de versiones con Bitbucket (GitFlow), asegurando la trazabilidad y colaboración efectiva en el código.
-Contribución a la Integración Continua (CI) mediante la construcción de scripts de pipeline en Jenkins, optimizando el despliegue automatizado de pruebas.</pre>
+            <pre>mar. 2023 - may. 2025 | Gran Santiago, Chile · En remoto
+Estrategia y Liderazgo Técnico: Definición e implementación del plan regional de automatización, estableciendo un framework base de pruebas para web, mobile y servicios.
+Desarrollo Avanzado de Automatización de Pruebas: Diseño de pruebas end-to-end (UI) robustas utilizando Cypress (TDD/BDD, Cucumber, Gherkin, NodeJS, Chai, Chai-jQuery). Implementación de automatización para aplicaciones nativas (iOS/Android) con Appium, WebdriverIO y NodeJS.
+Gestión de Proyectos: Ciclo de vida completo con Agile, Atlassian (Jira, Confluence) y QMetry para trazabilidad.</pre>
         </div>
 
         <div class="job-card">
             <h3>Analista QA Automatizador | Andain</h3>
-            <pre>nov. 2020 - feb. 2023 · 2 años 4 meses | Gran Santiago, Chile
-Automatización de Pruebas:
-Desarrollo de pruebas funcionales web con Selenium, Java, Maven.
-Automatización de pruebas funcionales con Python, PyTest, aplicando POM.
-Ejecución de pruebas unitarias (JUnit, PHPUnit, Jasmine, Karma).
-Pruebas de performance con JMeter.
-Desarrollo de pruebas regresivas.
-Testing funcional mobile con Appium, Selenium, Python, Pytest, aplicando POM.
-Prueba de servicios API REST con Postman.
-Análisis y revisión de desarrollos internos; elaboración de casos y evidencias de prueba.
-
-CI/CD y DevOps:
-Generación de entornos de integración automatizados con Jenkins, Docker, Pytest, Selenium, Jira, Slack.
-Construcción de integración automatizada de tests con Docker, Jenkins, GitHub, Pytest, Selenium.
-Administración de contenedores Docker (imágenes, Dockerfile, Docker-Compose).
-
-Gestión y Bases de Datos:
-Gestión operativa de proyectos con Jira.
-Metodología de Trabajo SCRUM.
-Manejo de MySQL y MongoDB.
-Linux Bash.</pre>
+            <pre>nov. 2020 - feb. 2023 | Gran Santiago, Chile
+Desarrollo de pruebas funcionales web con Selenium, Java, Maven. Automatización con Python, PyTest y POM. 
+CI/CD: Generación de entornos de integración con Jenkins, Docker, Pytest, Selenium. 
+Gestión: Metodología SCRUM, MySQL, MongoDB y Linux Bash.</pre>
         </div>
+    </div>
 
-        <div class="job-card">
-            <h3>Practicum Student | IBM</h3>
-            <pre>feb. 2020 - jun. 2020 · 5 meses | Providencia, Chile
-Participación activa en la transformación digital de un cliente bancario, con foco en el desarrollo y las operaciones (DevOps).
-
-Integración y Despliegue Continuo (CI/CD): Implementación de Delivery Pipelines con Jenkins para integración y despliegue continuo de aplicaciones AngularJS y Java.
-Calidad de Software: Ejecución de test unitarios y pruebas funcionales para asegurar la calidad de las aplicaciones.
-Contenerización: Gestión y configuración de contenedores con Docker, optimizando entornos de desarrollo y despliegue.</pre>
+    <!-- Pestaña Skills -->
+    <div id="skills" class="tab-content">
+        <div class="skill-grid">
+            <div class="skill-item"><i class="fab fa-java"></i> Java</div>
+            <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+            <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="skill-item"><i class="fab fa-jenkins"></i> Jenkins</div>
+            <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+            <div class="skill-item"><i class="fas fa-database"></i> Oracle/SQL</div>
+            <div class="skill-item"><i class="fas fa-robot"></i> Selenium/Appium</div>
+            <div class="skill-item"><i class="fas fa-cloud"></i> GCP/Cloud</div>
         </div>
-    </section>
-</div>
-
-<div id="modalContacto" class="modal">
-    <div class="modal-content">
-        <span class="cerrar" onclick="document.getElementById('modalContacto').style.display='none'" style="float: right; cursor: pointer;">&times;</span>
-        <h2>Contacto</h2>
-        <p>📱 +56 9 3533 5420</p>
-        <p>📧 <a href="mailto:mlazorc@gmail.com">mlazorc@gmail.com</a></p>
-        <p>🔗 <a href="https://www.linkedin.com/in/marco-lazo-67693b117" target="_blank">LinkedIn</a></p>
     </div>
 </div>
 
 <script>
-    document.getElementById("btnContacto").onclick = () => document.getElementById("modalContacto").style.display = "block";
+    function showTab(id) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
 </script>
-
 </body>
 </html>
