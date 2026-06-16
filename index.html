@@ -275,6 +275,9 @@
             .job-header { flex-direction: column; align-items: flex-start; gap: 0.5rem;}
             .btn-primary { width: 100%; text-align: center; }
         }
+        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); }
+        .modal-contenido { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 300px; border-radius: 8px; }
+        .cerrar { float: right; cursor: pointer; font-size: 28px; }
     </style>
 </head>
 <body>
@@ -296,8 +299,8 @@
         <!-- Sección Principal (Hero) con Imagen -->
         <section class="hero" id="about">
             <div class="hero-content">
-                <h1>Marco Andrés Lazo</h1>
-                <h2>QA Automation & DevOps Architect</h2>
+                <h1>Marco Andrés Lazo Aravena</h1>
+                <h2>QA Automation Engineer | DevOps | SDET</h2>
                 <p>Ingeniero Senior especializado en optimización del ciclo de vida del software, diseño de arquitecturas de pruebas escalables y aplicación práctica de IA para la eficiencia operativa en entornos de alta criticidad.</p>
                 <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                     <a href="#experience" class="btn-primary">Ver Experiencia</a>
@@ -320,7 +323,7 @@
                     <div class="job-header">
                         <div>
                             <div class="job-title">QA Automatizador Experto</div>
-                            <div class="job-company">@ Zenta Group</div>
+                            <div class="job-company">Zenta Group</div>
                         </div>
                         <div class="job-date">Jul 2025 - Presente</div>
                     </div>
@@ -336,7 +339,7 @@
                     <div class="job-header">
                         <div>
                             <div class="job-title">QA Automation Engineer Senior</div>
-                            <div class="job-company">@ FEMSA Salud SpA</div>
+                            <div class="job-company">FEMSA Salud SpA</div>
                         </div>
                         <div class="job-date">Mar 2023 - May 2025</div>
                     </div>
@@ -351,7 +354,7 @@
                     <div class="job-header">
                         <div>
                             <div class="job-title">QA Automation Engineer</div>
-                            <div class="job-company">@ Andain S.A</div>
+                            <div class="job-company">Andain S.A</div>
                         </div>
                         <div class="job-date">Nov 2020 - Mar 2023</div>
                     </div>
@@ -427,6 +430,19 @@
     <footer>
         <p>Diseñado y estructurado para despliegue continuo. Conecta conmigo en <a href="https://linkedin.com/in/marco-lazo-67693b117" target="_blank">LinkedIn</a>.</p>
     </footer>
+    <!-- Botón de contacto -->
+    <button id="btnContacto">Contactar</button>
 
+    <!-- Estructura del Modal -->
+    <div id="modalContacto" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h2>Información de Contacto</h2>
+        <p><strong>Ubicación:</strong> Santiago, Chile</p>
+        <p><strong>Teléfono:</strong> +56 9 3533 5420</p>
+        <p><strong>Email:</strong> <a href="mailto:mlazorc@gmail.com">mlazorc@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/marco-lazo-67693b117" target="_blank">Perfil Profesional</a></p>
+    </div>
+    </div>
 </body>
 </html>
