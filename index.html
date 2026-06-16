@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <title>Marco Andrés Lazo Aravena | QA Expert</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <header>
+        <img src="perfil.jpg" alt="Marco Lazo">
+        <h1>Marco Andrés Lazo Aravena</h1>
+        <p>QA Automation Engineer | DevOps | SDET</p>
+        <button onclick="document.getElementById('contacto').scrollIntoView()">Contactar 📞</button>
+    </header>
 
-<div class="container">
-    <!-- Pestañas de Navegación -->
     <nav>
         <button onclick="showSection('experiencia')">💼 Experiencia</button>
-        <button onclick="showSection('proyectos')">🚀 Proyectos</button>
+        <button onclick="showSection('proyectos')">🚀 Portafolio</button>
     </nav>
 
-    <!-- Sección Proyectos con Miniaturas -->
-    <section id="proyectos" class="section">
-        <h2>Mis Proyectos</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="images.jpg" alt="Proyecto">
-                <h3>Automatización de Login</h3>
-                <p>Automatización con Selenium y Python. Incluye manejo de errores.</p>
-                <i class="fab fa-github"></i>
+    <main>
+        <section id="experiencia" class="section active">
+            <h2>Experiencia Profesional</h2>
+            <!-- ZENTA GROUP -->
+            <div class="card">
+                <h3>QA Automatizador Experto | Zenta Group</h3>
+                <p><strong>jul. 2025 - actualidad · 1 año</strong> | Gran Santiago, Chile · Híbrido</p>
+                <p>Lidero estrategias de ingeniería de calidad robustas y la promoción de mejores prácticas en sectores críticos (Previsional/AFP). Mi enfoque combina el liderazgo técnico con la implementación de arquitecturas escalables y cultura DevOps.</p>
+                <p><strong>Experiencia y Responsabilidades Clave:</strong></p>
+                <ul>
+                    <li><strong>Liderazgo y Estrategia:</strong> Dirección del equipo de QA en clientes AFP. Implementé flujos de trabajo Agile Testing (Shift-Left), colaborando con POs, UX y Devs para asegurar la calidad desde el diseño.</li>
+                    <li><strong>Arquitectura de Automatización:</strong> Diseño y mantenimiento de frameworks desacoplados bajo el patrón Page Object Model (POM). Esta arquitectura separa la lógica del framework en proyectos base independientes, permitiendo alta reutilización y escalabilidad.</li>
+                    <li><strong>Automatización Web & Mobile:</strong> Desarrollo de suites robustas con Selenium + Java. Implementación de pruebas móviles con Appium + Pytest, aplicando arquitectura modular.</li>
+                    <li><strong>Ciclo de Vida y Despliegues:</strong> Responsable del despliegue en ambientes de QA y STG. Gestiono el proceso de PR y Merge a STG tras la certificación en QA, asegurando pasos a producción estables.</li>
+                    <li><strong>ChatOps y Comunicación:</strong> Automatización de flujos de comunicación entre QA y Desarrollo, generando notificaciones y registros automáticos de despliegues para optimizar la visibilidad del equipo.</li>
+                    <li><strong>CI/CD & Calidad de Código:</strong> Integración de pruebas en pipelines de Jenkins. Uso de SonarQube para análisis estático, garantizando scripts seguros y mantenibles.</li>
+                </ul>
+                <p><strong>Stack Tecnológico:</strong> Herramientas: Selenium, Appium, Pytest, Postman, JMeter, K6, BrowserStack. Lenguajes: Java, Python, TypeScript, JavaScript. DevOps/Cloud: Jenkins, Git (GitFlow), Bitbucket, GCP. Gestión: X-ray, Jira, SonarQube, Oracle, PostgreSQL.</p>
             </div>
-            <!-- Añade más tarjetas siguiendo esta estructura -->
-        </div>
-    </section>
 
-    <!-- Sección Experiencia (Tal cual la entregaste) -->
-    <section id="experiencia" class="section">
-        <h2>Experiencia Profesional</h2>
-        <div class="job-item">
-            <h3>QA Automatizador Experto | Zenta Group</h3>
-            <p>Lidero estrategias de ingeniería de calidad robustas en sectores críticos...</p>
-            <!-- (Aquí pegas el resto de tu experiencia completa) -->
-        </div>
-    </section>
-</div>
+            <!-- FEMSA SALUD -->
+            <div class="card">
+                <h3>Automatizador Senior | FEMSA Salud</h3>
+                <p><strong>mar. 2023 - may. 2025 · 2 años 3 meses</strong> | En remoto</p>
+                <p><strong>Estrategia y Liderazgo Técnico:</strong> Definición e implementación del plan regional de automatización, estableciendo un framework base para web, mobile y servicios. Promoción de buenas prácticas que mejoraron la consistencia y mantenibilidad del código.</p>
+                <p><strong>Desarrollo Avanzado:</strong> Diseño de pruebas E2E con Cypress (TDD/BDD, Cucumber, Gherkin). Automatización mobile con Appium, WebdriverIO y NodeJS. Pruebas de integración/servicios con Postman, K6, TypeScript y JS.</p>
+                <p><strong>Gestión:</strong> Ciclo de vida completo con metodología Agile (Jira, Confluence), administración con QMetry y control de versiones con Bitbucket (GitFlow).</p>
+            </div>
+            
+            <!-- Andain e IBM seguirían aquí con la misma estructura -->
+        </section>
 
-<script>
-    function showSection(id) {
-        document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-        document.getElementById(id).style.display = 'block';
-    }
-</script>
+        <section id="proyectos" class="section">
+            <h2>Proyectos</h2>
+            <div class="grid">
+                <div class="project-card">
+                    <img src="images.jpg" alt="Proyecto">
+                    <h3>Automatización de Login</h3>
+                    <p>Automatización del proceso de inicio de sesión con Selenium, Python y Pytest. Cubre credenciales válidas/inválidas y manejo de mensajes de error.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
 </body>
 </html>
