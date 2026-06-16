@@ -2,67 +2,74 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Marco Andrés Lazo Aravena | QA Expert</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Marco Lazo | QA Expert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --dark-blue: #0f172a; --deep-purple: #1e1b4b; --accent: #38bdf8; }
+        body { background: radial-gradient(circle at top, var(--deep-purple), var(--dark-blue)); color: #e2e8f0; font-family: 'Inter', sans-serif; margin: 0; padding: 40px; }
+        .container { max-width: 900px; margin: auto; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .card { background: rgba(30, 41, 59, 0.7); padding: 30px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(56, 189, 248, 0.2); }
+        .grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .project-card { background: rgba(15, 23, 42, 0.8); border: 1px solid #334155; padding: 20px; border-radius: 12px; }
+        h2 { color: var(--accent); }
+    </style>
 </head>
 <body>
-    <header>
-        <img src="perfil.jpg" alt="Marco Lazo">
-        <h1>Marco Andrés Lazo Aravena</h1>
-        <p>QA Automation Engineer | DevOps | SDET</p>
-        <button onclick="document.getElementById('contacto').scrollIntoView()">Contactar 📞</button>
-    </header>
 
-    <nav>
-        <button onclick="showSection('experiencia')">💼 Experiencia</button>
-        <button onclick="showSection('proyectos')">🚀 Portafolio</button>
+<div class="container">
+    <nav style="margin-bottom: 40px; display: flex; gap: 20px;">
+        <button onclick="show('experiencia')">💼 Experiencia</button>
+        <button onclick="show('proyectos')">🚀 Portafolio</button>
     </nav>
 
-    <main>
-        <section id="experiencia" class="section active">
-            <h2>Experiencia Profesional</h2>
-            <!-- ZENTA GROUP -->
-            <div class="card">
-                <h3>QA Automatizador Experto | Zenta Group</h3>
-                <p><strong>jul. 2025 - actualidad · 1 año</strong> | Gran Santiago, Chile · Híbrido</p>
-                <p>Lidero estrategias de ingeniería de calidad robustas y la promoción de mejores prácticas en sectores críticos (Previsional/AFP). Mi enfoque combina el liderazgo técnico con la implementación de arquitecturas escalables y cultura DevOps.</p>
-                <p><strong>Experiencia y Responsabilidades Clave:</strong></p>
-                <ul>
-                    <li><strong>Liderazgo y Estrategia:</strong> Dirección del equipo de QA en clientes AFP. Implementé flujos de trabajo Agile Testing (Shift-Left), colaborando con POs, UX y Devs para asegurar la calidad desde el diseño.</li>
-                    <li><strong>Arquitectura de Automatización:</strong> Diseño y mantenimiento de frameworks desacoplados bajo el patrón Page Object Model (POM). Esta arquitectura separa la lógica del framework en proyectos base independientes, permitiendo alta reutilización y escalabilidad.</li>
-                    <li><strong>Automatización Web & Mobile:</strong> Desarrollo de suites robustas con Selenium + Java. Implementación de pruebas móviles con Appium + Pytest, aplicando arquitectura modular.</li>
-                    <li><strong>Ciclo de Vida y Despliegues:</strong> Responsable del despliegue en ambientes de QA y STG. Gestiono el proceso de PR y Merge a STG tras la certificación en QA, asegurando pasos a producción estables.</li>
-                    <li><strong>ChatOps y Comunicación:</strong> Automatización de flujos de comunicación entre QA y Desarrollo, generando notificaciones y registros automáticos de despliegues para optimizar la visibilidad del equipo.</li>
-                    <li><strong>CI/CD & Calidad de Código:</strong> Integración de pruebas en pipelines de Jenkins. Uso de SonarQube para análisis estático, garantizando scripts seguros y mantenibles.</li>
-                </ul>
-                <p><strong>Stack Tecnológico:</strong> Herramientas: Selenium, Appium, Pytest, Postman, JMeter, K6, BrowserStack. Lenguajes: Java, Python, TypeScript, JavaScript. DevOps/Cloud: Jenkins, Git (GitFlow), Bitbucket, GCP. Gestión: X-ray, Jira, SonarQube, Oracle, PostgreSQL.</p>
-            </div>
+    <!-- Experiencia Completa -->
+    <div id="experiencia" class="tab-content active">
+        <div class="card">
+            <h3>QA Automatizador Experto | Zenta Group</h3>
+            <p><strong>jul. 2025 - actualidad · 1 año</strong> | Híbrido, Santiago</p>
+            <p>Lidero estrategias de ingeniería de calidad robustas y la promoción de mejores prácticas en sectores críticos (Previsional/AFP). Mi enfoque combina el liderazgo técnico con la implementación de arquitecturas escalables y cultura DevOps.</p>
+            <p><strong>Responsabilidades:</strong> Liderazgo y Estrategia (Agile/Shift-Left), Arquitectura POM (Frameworks desacoplados), Automatización Web/Mobile (Selenium/Appium), CI/CD y ChatOps.</p>
+            <p><strong>Stack:</strong> Selenium, Appium, Pytest, Postman, JMeter, K6, Jenkins, SonarQube, Oracle, PostgreSQL.</p>
+        </div>
 
-            <!-- FEMSA SALUD -->
-            <div class="card">
-                <h3>Automatizador Senior | FEMSA Salud</h3>
-                <p><strong>mar. 2023 - may. 2025 · 2 años 3 meses</strong> | En remoto</p>
-                <p><strong>Estrategia y Liderazgo Técnico:</strong> Definición e implementación del plan regional de automatización, estableciendo un framework base para web, mobile y servicios. Promoción de buenas prácticas que mejoraron la consistencia y mantenibilidad del código.</p>
-                <p><strong>Desarrollo Avanzado:</strong> Diseño de pruebas E2E con Cypress (TDD/BDD, Cucumber, Gherkin). Automatización mobile con Appium, WebdriverIO y NodeJS. Pruebas de integración/servicios con Postman, K6, TypeScript y JS.</p>
-                <p><strong>Gestión:</strong> Ciclo de vida completo con metodología Agile (Jira, Confluence), administración con QMetry y control de versiones con Bitbucket (GitFlow).</p>
-            </div>
-            
-            <!-- Andain e IBM seguirían aquí con la misma estructura -->
-        </section>
+        <div class="card">
+            <h3>Automatizador Senior | FEMSA Salud</h3>
+            <p><strong>mar. 2023 - may. 2025 · 2 años 3 meses</strong> | Remoto</p>
+            <p>Definición e implementación del plan regional de automatización. Desarrollo E2E robusto con Cypress (TDD/BDD) y automatización mobile con Appium/WebdriverIO. Integración continua en Jenkins y gestión con Jira/Confluence/QMetry.</p>
+        </div>
 
-        <section id="proyectos" class="section">
-            <h2>Proyectos</h2>
-            <div class="grid">
-                <div class="project-card">
-                    <img src="images.jpg" alt="Proyecto">
-                    <h3>Automatización de Login</h3>
-                    <p>Automatización del proceso de inicio de sesión con Selenium, Python y Pytest. Cubre credenciales válidas/inválidas y manejo de mensajes de error.</p>
-                </div>
+        <div class="card">
+            <h3>Analista QA Automatizador | Andain</h3>
+            <p><strong>nov. 2020 - feb. 2023 · 2 años 4 meses</strong> | Santiago</p>
+            <p>Desarrollo funcional web (Selenium/Java) y automatización móvil/API. Generación de entornos integrados con Jenkins, Docker y pruebas de performance con JMeter.</p>
+        </div>
+
+        <div class="card">
+            <h3>Practicum Student | IBM</h3>
+            <p><strong>feb. 2020 - jun. 2020 · 5 meses</strong> | Providencia</p>
+            <p>Transformación digital en sector bancario, implementación de pipelines con Jenkins y gestión de contenedores con Docker.</p>
+        </div>
+    </div>
+
+    <!-- Proyectos con imagen image_c2b899.jpg -->
+    <div id="proyectos" class="tab-content">
+        <div class="grid-proyectos">
+            <div class="project-card">
+                <img src="image_c2b899.jpg" style="width:100%; border-radius:8px;">
+                <h3>Automatización de Login</h3>
+                <p>Automatización con Selenium, Python y Pytest. Manejo de credenciales y mensajes de error.</p>
             </div>
-        </section>
-    </main>
-    
-    <script src="script.js"></script>
+        </div>
+    </div>
+</div>
+
+<script>
+    function show(id) {
+        document.querySelectorAll('.tab-content').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+</script>
 </body>
 </html>
