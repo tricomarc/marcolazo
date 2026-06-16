@@ -2,101 +2,133 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marco Lazo | QA & DevOps Expert</title>
+    <title>Marco Lazo | QA Expert</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --text-color: #e2e8f0;
-            --primary-color: #00d4ff;
-            --accent-color: #ff007f;
-            --secondary-bg: #1e293b;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --primary-color: #2563eb;
+            --card-bg: #ffffff;
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; line-height: 1.6; }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        .job-card { background: var(--secondary-bg); border-left: 5px solid var(--primary-color); padding: 2rem; margin-bottom: 2rem; border-radius: 10px; }
-        h1, h2 { color: var(--primary-color); }
-        .btn-primary { background-color: var(--primary-color); color: #0f172a; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; }
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
-        .modal-contenido { background: #1e293b; margin: 10% auto; padding: 30px; border: 2px solid var(--primary-color); width: 80%; max-width: 500px; border-radius: 12px; }
-        .cerrar { float: right; cursor: pointer; color: var(--accent-color); font-size: 28px; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 900px; margin: auto; }
+        .hero { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; }
+        .hero img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary-color); }
+        .job-card { background: var(--card-bg); padding: 25px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .btn-primary { background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; border: none; font-weight: bold; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
+        .modal-content { background: white; margin: 10% auto; padding: 30px; width: 350px; border-radius: 10px; text-align: center; }
+        h3 { color: var(--primary-color); margin-bottom: 5px; }
+        pre { white-space: pre-wrap; font-family: inherit; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>Marco Andrés Lazo Aravena</h1>
-        <p>QA Automation Engineer | DevOps | SDET</p>
-        <button id="btnContacto" class="btn-primary">Contactar</button>
+    <header class="hero">
+        <img src="perfil.jpg" alt="Marco Lazo">
+        <div>
+            <h1>Marco Andrés Lazo Aravena</h1>
+            <p>QA Automation Engineer | DevOps | SDET</p>
+            <button id="btnContacto" class="btn-primary">Contactar</button>
+        </div>
     </header>
 
     <section id="experience">
         <h2>Experiencia Profesional</h2>
 
-        <!-- Zenta Group -->
         <div class="job-card">
-            <h3>QA Automatizador Experto @ Zenta Group</h3>
-            <p><em>jul. 2025 - actualidad</em></p>
-            <p>Liderazgo técnico en sectores críticos (AFP) implementando arquitecturas escalables y cultura DevOps.</p>
-            <ul>
-                <li><strong>Estrategia Shift-Left:</strong> Dirección del equipo de QA colaborando activamente con POs, UX y Devs desde la fase de diseño.</li>
-                <li><strong>Arquitectura POM Avanzada:</strong> Diseño de frameworks desacoplados que aseguran alta reutilización y escalabilidad en proyectos base.</li>
-                <li><strong>Ecosistema de Automatización:</strong> Desarrollo robusto en Selenium (Java) para Web y Appium + Pytest para pruebas móviles modulares.</li>
-                <li><strong>CI/CD y Calidad:</strong> Orquestación de pipelines en Jenkins e integración de SonarQube para garantizar estándares de código seguro.</li>
-            </ul>
+            <h3>QA Automatizador Experto | Zenta Group</h3>
+            <pre>jul. 2025 - actualidad · 1 año | Gran Santiago, Chile · Híbrido
+Lidero estrategias de ingeniería de calidad robustas y la promoción de mejores prácticas en sectores críticos (Previsional/AFP). Mi enfoque combina el liderazgo técnico con la implementación de arquitecturas escalables y cultura DevOps.
+
+Experiencia y Responsabilidades Clave:
+Liderazgo y Estrategia: Dirección del equipo de QA en clientes AFP. Implementé flujos de trabajo Agile Testing (Shift-Left), colaborando con POs, UX y Devs para asegurar la calidad desde el diseño.
+
+Arquitectura de Automatización: Diseño y mantenimiento de frameworks desacoplados bajo el patrón Page Object Model (POM). Esta arquitectura separa la lógica del framework en proyectos base independientes, permitiendo alta reutilización y escalabilidad.
+
+Automatización Web & Mobile: Desarrollo de suites robustas con Selenium + Java. Implementación de pruebas móviles con Appium + Pytest, aplicando arquitectura modular.
+
+Ciclo de Vida y Despliegues: Responsable del despliegue en ambientes de QA y STG. Gestiono el proceso de PR y Merge a STG tras la certificación en QA, asegurando pasos a producción estables.
+
+ChatOps y Comunicación: Automatización de flujos de comunicación entre QA y Desarrollo, generando notificaciones y registros automáticos de despliegues para optimizar la visibilidad del equipo.
+
+CI/CD & Calidad de Código: Integración de pruebas en pipelines de Jenkins. Uso de SonarQube para análisis estático, garantizando scripts seguros y mantenibles.
+
+Stack Tecnológico:
+Herramientas: Selenium, Appium, Pytest, Postman, JMeter, K6, BrowserStack.
+Lenguajes: Java, Python, TypeScript, JavaScript.
+DevOps/Cloud: Jenkins, Git (GitFlow), Bitbucket, Google Cloud Platform (GCP).
+Gestión: X-ray, Jira, SonarQube, Oracle, PostgreSQL.</pre>
         </div>
 
-        <!-- FEMSA -->
         <div class="job-card">
-            <h3>Automatizador Senior @ FEMSA Salud</h3>
-            <p><em>mar. 2023 - may. 2025</em></p>
-            <p>Definición del plan regional de automatización para Web, Mobile y Servicios.</p>
-            <ul>
-                <li><strong>Framework Regional:</strong> Estandarización de metodologías mediante un framework único que aceleró los ciclos de desarrollo en toda la región.</li>
-                <li><strong>E2E Testing (UI):</strong> Desarrollo de pruebas robustas con Cypress (TDD/BDD, Cucumber, Gherkin) enfocadas en la experiencia de usuario.</li>
-                <li><strong>Pruebas de API/Rendimiento:</strong> Implementación de validación de lógica de negocio y carga con K6, TypeScript y Postman.</li>
-            </ul>
+            <h3>Automatizador Senior | FEMSA Salud</h3>
+            <pre>mar. 2023 - may. 2025 · 2 años 3 meses | Gran Santiago, Chile · En remoto
+Estrategia y Liderazgo Técnico:
+Definición e implementación del plan regional de automatización, estableciendo un framework base de pruebas para web, mobile y servicios. Este marco escalable permitió estandarizar metodologías y acelerar los ciclos de desarrollo en toda la región.
+Promoción e implementación de buenas prácticas de desarrollo de scripts automatizados, proporcionando lineamientos técnicos claros que mejoraron la consistencia y mantenibilidad del código del equipo.
+
+Desarrollo Avanzado de Automatización de Pruebas:
+Diseño y desarrollo de pruebas end-to-end (UI) robustas utilizando Cypress (TDD/BDD, Cucumber, Gherkin, NodeJS, Chai, Chai-jQuery), asegurando la fiabilidad y experiencia de usuario de las plataformas web.
+Implementación de la automatización de pruebas para aplicaciones nativas (iOS/Android) con Appium, WebdriverIO y NodeJS, garantizando la calidad y funcionalidad en entornos móviles críticos.
+Desarrollo y automatización de pruebas de integración y servicios (API), alineadas a la arquitectura de sistema, empleando herramientas como Postman, Grafana-K6, TypeScript, NodeJS y JavaScript para validar lógicas de negocio y rendimiento.
+
+Gestión de Proyectos y Mejora Continua:
+Gestión del ciclo de vida completo de proyectos de automatización aplicando metodología Agile y utilizando herramientas Atlassian (Jira, Confluence) para una planificación, seguimiento y comunicación eficientes.
+Administración de casos de prueba con QMetry y control de versiones con Bitbucket (GitFlow), asegurando la trazabilidad y colaboración efectiva en el código.
+Contribución a la Integración Continua (CI) mediante la construcción de scripts de pipeline en Jenkins, optimizando el despliegue automatizado de pruebas.</pre>
         </div>
 
-        <!-- Andain -->
         <div class="job-card">
-            <h3>Analista QA Automatizador @ Andain</h3>
-            <p><em>nov. 2020 - feb. 2023</em></p>
-            <p>Foco total en la automatización funcional y la infraestructura de testing.</p>
-            <ul>
-                <li><strong>Automatización Web/Mobile:</strong> Implementación extensiva de Selenium, Appium y Pytest utilizando el patrón POM.</li>
-                <li><strong>Infraestructura DevOps:</strong> Creación de entornos automatizados mediante Docker, Jenkins y gestión de contenedores con Docker-Compose.</li>
-                <li><strong>Pruebas de Performance:</strong> Ejecución y análisis de pruebas de carga con JMeter.</li>
-            </ul>
+            <h3>Analista QA Automatizador | Andain</h3>
+            <pre>nov. 2020 - feb. 2023 · 2 años 4 meses | Gran Santiago, Chile
+Automatización de Pruebas:
+Desarrollo de pruebas funcionales web con Selenium, Java, Maven.
+Automatización de pruebas funcionales con Python, PyTest, aplicando POM.
+Ejecución de pruebas unitarias (JUnit, PHPUnit, Jasmine, Karma).
+Pruebas de performance con JMeter.
+Desarrollo de pruebas regresivas.
+Testing funcional mobile con Appium, Selenium, Python, Pytest, aplicando POM.
+Prueba de servicios API REST con Postman.
+Análisis y revisión de desarrollos internos; elaboración de casos y evidencias de prueba.
+
+CI/CD y DevOps:
+Generación de entornos de integración automatizados con Jenkins, Docker, Pytest, Selenium, Jira, Slack.
+Construcción de integración automatizada de tests con Docker, Jenkins, GitHub, Pytest, Selenium.
+Administración de contenedores Docker (imágenes, Dockerfile, Docker-Compose).
+
+Gestión y Bases de Datos:
+Gestión operativa de proyectos con Jira.
+Metodología de Trabajo SCRUM.
+Manejo de MySQL y MongoDB.
+Linux Bash.</pre>
         </div>
 
-        <!-- IBM -->
         <div class="job-card">
-            <h3>Practicum Student @ IBM</h3>
-            <p><em>feb. 2020 - jun. 2020</em></p>
-            <p>Transformación digital bancaria y operaciones DevOps.</p>
-            <ul>
-                <li><strong>CI/CD:</strong> Despliegue de aplicaciones AngularJS y Java mediante pipelines en Jenkins.</li>
-                <li><strong>Contenerización:</strong> Optimización de entornos mediante configuración de contenedores Docker.</li>
-            </ul>
+            <h3>Practicum Student | IBM</h3>
+            <pre>feb. 2020 - jun. 2020 · 5 meses | Providencia, Chile
+Participación activa en la transformación digital de un cliente bancario, con foco en el desarrollo y las operaciones (DevOps).
+
+Integración y Despliegue Continuo (CI/CD): Implementación de Delivery Pipelines con Jenkins para integración y despliegue continuo de aplicaciones AngularJS y Java.
+Calidad de Software: Ejecución de test unitarios y pruebas funcionales para asegurar la calidad de las aplicaciones.
+Contenerización: Gestión y configuración de contenedores con Docker, optimizando entornos de desarrollo y despliegue.</pre>
         </div>
     </section>
 </div>
 
 <div id="modalContacto" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar">&times;</span>
+    <div class="modal-content">
+        <span class="cerrar" onclick="document.getElementById('modalContacto').style.display='none'" style="float: right; cursor: pointer;">&times;</span>
         <h2>Contacto</h2>
-        <p>Teléfono: +56 9 3533 5420</p>
-        <p>Email: mlazorc@gmail.com</p>
+        <p>📱 +56 9 3533 5420</p>
+        <p>📧 <a href="mailto:mlazorc@gmail.com">mlazorc@gmail.com</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/marco-lazo-67693b117" target="_blank">LinkedIn</a></p>
     </div>
 </div>
 
 <script>
-    const modal = document.getElementById("modalContacto");
-    document.getElementById("btnContacto").onclick = () => modal.style.display = "block";
-    document.getElementsByClassName("cerrar")[0].onclick = () => modal.style.display = "none";
+    document.getElementById("btnContacto").onclick = () => document.getElementById("modalContacto").style.display = "block";
 </script>
 
 </body>
