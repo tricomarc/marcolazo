@@ -6,286 +6,24 @@
     <title>Marco Lazo | QA Automation & DevOps Architect</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --text-color: #cbd5e1;
-            --primary-color: #38bdf8;
-            --secondary-bg: #1e293b;
-            --accent-color: #0ea5e9;
-            --nav-bg: rgba(15, 23, 42, 0.9);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding-top: 80px; /* Para el navbar fijo */
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* --- Navbar --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: var(--nav-bg);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--secondary-bg);
-            transition: all 0.3s ease;
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            color: #f8fafc;
-            font-weight: 800;
-            font-size: 1.2rem;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-
+        :root { --bg-color: #0f172a; --text-color: #cbd5e1; --primary-color: #38bdf8; --secondary-bg: #1e293b; --accent-color: #0ea5e9; --nav-bg: rgba(15, 23, 42, 0.9); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; padding-top: 80px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        nav { position: fixed; top: 0; width: 100%; background-color: var(--nav-bg); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--secondary-bg); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .logo { color: #f8fafc; font-weight: 800; text-decoration: none; }
         .logo span { color: var(--primary-color); }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--primary-color); }
-
-        /* --- Hero Section --- */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 4rem 0;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .hero-content {
-            flex: 1;
-            padding-right: 2rem;
-        }
-
-        .hero h1 {
-            color: #f8fafc;
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .hero h2 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #0f172a;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            background-color: var(--accent-color);
-        }
-
-        /* Terminal Window */
-        .terminal {
-            flex: 1;
-            background: #000;
-            border-radius: 8px;
-            padding: 1.5rem;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            color: #10b981;
-            border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: none;
-        }
-
-        @media (min-width: 900px) {
-            .terminal { display: block; }
-        }
-
-        .terminal-header {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #333;
-        }
-
-        .circle {
-            width: 12px; height: 12px; border-radius: 50%;
-        }
-        .c-red { background: #ef4444; }
-        .c-yellow { background: #f59e0b; }
-        .c-green { background: #10b981; }
-
-        .terminal span.cmd { color: #38bdf8; }
-        .terminal span.str { color: #f59e0b; }
-
-        /* --- Sections --- */
-        section { padding: 5rem 0; border-bottom: 1px solid var(--secondary-bg); }
-        section:last-of-type { border-bottom: none; }
-
-        h3.section-title {
-            color: #f8fafc;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        h3.section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--primary-color);
-        }
-
-        /* --- Cards (Experience) --- */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .job-card {
-            background: var(--secondary-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+        .job-card { background: var(--secondary-bg); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary-color); margin-bottom: 2rem; }
+        .job-header { display: flex; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .job-title { color: #f8fafc; font-size: 1.3rem; font-weight: 600; }
-        .job-company { color: var(--primary-color); }
-        .job-date { font-size: 0.9rem; color: #94a3b8; font-family: 'Fira Code', monospace;}
-
+        .job-company { color: var(--primary-color); font-weight: bold; }
         .job-card ul { list-style: none; margin-left: 0; }
-        .job-card ul li {
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 1.8rem;
-        }
-        .job-card ul li::before {
-            content: "▹"; position: absolute; left: 0; color: var(--primary-color); font-weight: bold;
-        }
-
-        /* --- Skills Grid --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-box {
-            background: var(--secondary-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid transparent;
-            transition: border-color 0.3s;
-        }
-
-        .skill-box:hover { border-color: var(--primary-color); }
-        .skill-box h4 { color: #f8fafc; margin-bottom: 1rem; font-size: 1.1rem; }
-
-        .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-        .tag {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--primary-color);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--secondary-bg);
-            font-size: 0.9rem;
-        }
-
-        footer a { color: var(--primary-color); text-decoration: none; }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 2rem; }
-            .hero-content { padding-right: 0; }
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; /* Simplificación para móvil */ }
-            h3.section-title::after { left: 50%; transform: translateX(-50%); }
-            .job-header { flex-direction: column; align-items: flex-start; gap: 0.5rem;}
-        }
+        .job-card ul li { margin-bottom: 0.8rem; padding-left: 1.8rem; position: relative; }
+        .job-card ul li::before { content: "▹"; position: absolute; left: 0; color: var(--primary-color); }
+        h3.section-title { color: #f8fafc; font-size: 2rem; margin-bottom: 3rem; }
     </style>
 </head>
 <body>
@@ -294,158 +32,84 @@
         <div class="nav-content">
             <a href="#" class="logo">Marco<span>Lazo</span></a>
             <div class="nav-links">
-                <a href="#about">Perfil</a>
                 <a href="#experience">Experiencia</a>
-                <a href="#skills">Competencias</a>
-                <a href="#ai">Innovación IA</a>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <section class="hero" id="about">
-            <div class="hero-content">
-                <h1>Marco Andrés Lazo</h1>
-                <h2>QA Automation & DevOps Architect</h2>
-                <p>Ingeniero Senior especializado en optimización del ciclo de vida del software, diseño de arquitecturas de pruebas escalables y aplicación práctica de IA para la eficiencia operativa en entornos de alta criticidad.</p>
-                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#experience" class="btn-primary">Ver Experiencia</a>
-                    <a href="mailto:mlazorc@gmail.com" class="btn-primary" style="background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color);">Contactar</a>
-                </div>
-            </div>
-            
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="circle c-red"></div>
-                    <div class="circle c-yellow"></div>
-                    <div class="circle c-green"></div>
-                </div>
-                <p>~ <span class="cmd">curl</span> -X GET <span class="str">"https://api.marcolazo.dev/profile"</span></p>
-                <p style="color: #64748b; margin: 0.5rem 0;">HTTP/2 200 OK</p>
-                <p>{</p>
-                <p>&nbsp;&nbsp;<span class="str">"name"</span>: <span class="str">"Marco Lazo"</span>,</p>
-                <p>&nbsp;&nbsp;<span class="str">"role"</span>: <span class="str">"QA & DevOps Expert"</span>,</p>
-                <p>&nbsp;&nbsp;<span class="str">"location"</span>: <span class="str">"Santiago, Chile"</span>,</p>
-                <p>&nbsp;&nbsp;<span class="str">"status"</span>: <span class="str">"Certificando releases..."</span>,</p>
-                <p>&nbsp;&nbsp;<span class="str">"tech_stack"</span>: [<span class="str">"Jenkins"</span>, <span class="str">"Docker"</span>, <span class="str">"Selenium"</span>]</p>
-                <p>}</p>
-                <p>~ <span class="cmd">_</span></p>
-            </div>
-        </section>
-
         <section id="experience">
             <h3 class="section-title">Trayectoria Profesional</h3>
-            <div class="timeline">
-                
-                <div class="job-card">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">QA Automatizador Experto</div>
-                            <div class="job-company">@ Zenta Group</div>
-                        </div>
-                        <div class="job-date">Jul 2025 - Presente</div>
+            
+            <!-- ZENTA GROUP -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">QA Automatizador Experto</div>
+                        <div class="job-company">@ Zenta Group</div>
                     </div>
-                    <ul>
-                        <li><strong>Arquitectura DevOps & QA:</strong> Dirección técnica de equipos y diseño de arquitecturas robustas de automatización bajo estándares de alta disponibilidad.</li>
-                        <li><strong>Release Management:</strong> Responsable de la ejecución de despliegues en QA, certificación técnica integral y promoción estratégica de releases hacia STG.</li>
-                        <li><strong>Validación de Flujos de IA:</strong> Certificación técnica de procesos generados por agentes de IA.</li>
-                        <li>Orquestación y automatización de procesos operativos mediante n8n y Power Automate, con CI/CD en Jenkins, SonarQube, SauceLabs y BrowserStack.</li>
-                    </ul>
+                    <div class="job-date">Jul 2025 - Presente</div>
                 </div>
-
-                <div class="job-card">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">QA Automation Engineer Senior</div>
-                            <div class="job-company">@ FEMSA Salud SpA</div>
-                        </div>
-                        <div class="job-date">Mar 2023 - May 2025</div>
-                    </div>
-                    <ul>
-                        <li><strong>Liderazgo en Automatización & DevOps:</strong> Diseño y dirección de arquitectura para ecosistemas Web, API y Apps Híbridas/Nativas.</li>
-                        <li>Implementación de pipelines CI/CD integrales (Jenkins) con monitoreo preventivo en Grafana y pruebas de carga con k6.</li>
-                        <li>Automatización E2E robusta con Cypress y frameworks móviles con Appium, WebdriverIO y BrowserStack.</li>
-                    </ul>
-                </div>
-
-                <div class="job-card">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">QA Automation Engineer</div>
-                            <div class="job-company">@ Andain S.A</div>
-                        </div>
-                        <div class="job-date">Nov 2020 - Mar 2023</div>
-                    </div>
-                    <ul>
-                        <li><strong>Liderazgo Técnico:</strong> Diseño e implementación de arquitectura de pruebas (Web/Mobile/API) y optimización de pipelines CI/CD.</li>
-                        <li>Automatización escalable con Java y Python integrada en flujos de integración y entrega continua.</li>
-                        <li>Administración de infraestructura containerizada con Docker en Linux y gestión de BBDD en Oracle, MySQL y MongoDB.</li>
-                    </ul>
-                </div>
-
+                <ul>
+                    <li><strong>Liderazgo y Estrategia:</strong> Dirección del equipo de QA en clientes AFP. Implementé flujos de trabajo Agile Testing (Shift-Left), colaborando con POs, UX y Devs para asegurar la calidad desde el diseño.</li>
+                    <li><strong>Arquitectura de Automatización:</strong> Diseño y mantenimiento de frameworks desacoplados bajo el patrón Page Object Model (POM). Esta arquitectura separa la lógica del framework en proyectos base independientes, permitiendo alta reutilización y escalabilidad.</li>
+                    <li><strong>Automatización Web & Mobile:</strong> Desarrollo de suites robustas con Selenium + Java. Implementación de pruebas móviles con Appium + Pytest, aplicando arquitectura modular.</li>
+                    <li><strong>Ciclo de Vida y Despliegues:</strong> Responsable del despliegue en ambientes de QA y STG. Gestiono el proceso de PR y Merge a STG tras la certificación en QA, asegurando pasos a producción estables.</li>
+                    <li><strong>ChatOps y Comunicación:</strong> Automatización de flujos de comunicación entre QA y Desarrollo, generando notificaciones y registros automáticos de despliegues para optimizar la visibilidad del equipo.</li>
+                    <li><strong>CI/CD & Calidad de Código:</strong> Integración de pruebas en pipelines de Jenkins. Uso de SonarQube para análisis estático, garantizando scripts seguros y mantenibles.</li>
+                    <li><strong>Stack:</strong> Selenium, Appium, Pytest, Postman, JMeter, K6, BrowserStack, Java, Python, TypeScript, JavaScript, Jenkins, Git, Bitbucket, GCP, X-ray, Jira.</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="skills">
-            <h3 class="section-title">Stack Tecnológico</h3>
-            <div class="skills-grid">
-                <div class="skill-box">
-                    <h4>💻 Lenguajes</h4>
-                    <div class="tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Bash</span>
+            <!-- FEMSA SALUD -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Automatizador Senior</div>
+                        <div class="job-company">@ FEMSA Salud SpA</div>
                     </div>
+                    <div class="job-date">Mar 2023 - May 2025</div>
                 </div>
-                <div class="skill-box">
-                    <h4>🤖 Automation</h4>
-                    <div class="tags">
-                        <span class="tag">Selenium</span>
-                        <span class="tag">Appium</span>
-                        <span class="tag">Cypress</span>
-                        <span class="tag">n8n</span>
-                        <span class="tag">Playwright</span>
-                        <span class="tag">BrowserStack</span>
-                    </div>
-                </div>
-                <div class="skill-box">
-                    <h4>☁️ DevOps & Cloud</h4>
-                    <div class="tags">
-                        <span class="tag">Jenkins</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">GCP</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">GitFlow</span>
-                    </div>
-                </div>
-                <div class="skill-box">
-                    <h4>📊 Testing & Datos</h4>
-                    <div class="tags">
-                        <span class="tag">Pytest</span>
-                        <span class="tag">k6</span>
-                        <span class="tag">Grafana</span>
-                        <span class="tag">SonarQube</span>
-                        <span class="tag">Oracle</span>
-                        <span class="tag">MongoDB</span>
-                    </div>
-                </div>
+                <ul>
+                    <li><strong>Estrategia y Liderazgo Técnico:</strong> Definición e implementación del plan regional de automatización, estableciendo un framework base para web, mobile y servicios. Promoción de buenas prácticas que mejoraron la consistencia y mantenibilidad del código.</li>
+                    <li><strong>Desarrollo Avanzado:</strong> Diseño de pruebas E2E con Cypress (TDD/BDD, Cucumber, Gherkin). Automatización mobile con Appium, WebdriverIO y NodeJS. Pruebas de integración/servicios con Postman, K6, TypeScript y JS.</li>
+                    <li><strong>Gestión:</strong> Ciclo de vida completo con metodología Agile (Jira, Confluence), administración con QMetry y control de versiones con Bitbucket (GitFlow).</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="ai">
-            <div class="job-card" style="border-left-color: #8b5cf6;">
-                <h3 style="color: #f8fafc; font-size: 1.5rem; margin-bottom: 1rem;">🧠 Innovación e Inteligencia Artificial</h3>
-                <p>Exploración activa e implementación práctica de modelos de lenguaje aplicados a la mejora de procesos técnicos. Configuración de entornos locales con <strong>Modelfile en Ollama</strong>, optimización de resultados mediante <strong>Prompt Engineering</strong> y uso de <strong>OpenRouter</strong> para la integración de LLMs. Interés constante en la adopción de nuevas tecnologías para optimizar la lógica de pruebas y flujos de trabajo.</p>
+            <!-- ANDAIN -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Analista QA Automatizador</div>
+                        <div class="job-company">@ Andain S.A</div>
+                    </div>
+                    <div class="job-date">Nov 2020 - Feb 2023</div>
+                </div>
+                <ul>
+                    <li><strong>Liderazgo Técnico:</strong> Diseño e implementación de arquitectura de pruebas (Web/Mobile/API) y optimización de pipelines CI/CD.</li>
+                    <li>Automatización funcional web con Selenium y Java. Desarrollo de suites de automatización móvil y servicios API.</li>
+                    <li><strong>Infraestructura:</strong> Generación de entornos integrados con Jenkins, Docker y pruebas de performance mediante JMeter. Administración de bases de datos Oracle, MySQL y MongoDB.</li>
+                </ul>
+            </div>
+
+            <!-- IBM -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Practicum Student</div>
+                        <div class="job-company">@ IBM</div>
+                    </div>
+                    <div class="job-date">Feb 2020 - Jun 2020</div>
+                </div>
+                <ul>
+                    <li>Colaboración en proyectos de transformación digital para el sector bancario.</li>
+                    <li>Implementación de pipelines de integración continua utilizando Jenkins.</li>
+                    <li>Gestión y despliegue de aplicaciones mediante contenedores Docker.</li>
+                </ul>
             </div>
         </section>
     </div>
-
-    <footer>
-        <p>Diseñado y estructurado para despliegue continuo. Conecta conmigo en <a href="https://linkedin.com/in/marco-lazo-67693b117" target="_blank">LinkedIn</a>.</p>
-    </footer>
 
 </body>
 </html>
